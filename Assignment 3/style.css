@@ -1,0 +1,119 @@
+/* Color Variables */
+:root {
+    --bg-color-light: #f0f2f5;
+    --app-bg-light: #ffffff;
+    --text-color-light: #333;
+    --task-bg-light: #e9ecef;
+    --accent-color: #20c997;
+}
+
+.dark-mode {
+    --bg-color-light: #121212;
+    --app-bg-light: #1e1e1e;
+    --text-color-light: #f5f5f5;
+    --task-bg-light: #2c2c2c;
+    --accent-color: #20c997;
+}
+
+/* General Body and Layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--app-bg-light);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    overflow: hidden;
+}
+
+/* Header Styling */
+.app-header .app-title {
+    font-family: 'Pacifico', cursive;
+    color: var(--accent-color);
+}
+.app-header .fa-check {
+    color: var(--accent-color);
+}
+.mode-toggles i {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+}
+
+/* Task Tabs */
+.task-tabs .tab-btn {
+    border: none;
+    background: transparent;
+    color: var(--text-color-light);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.task-tabs .tab-btn.active {
+    border-bottom: 3px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Task List Items */
+#taskList {
+    flex-grow: 1;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    background-color: var(--task-bg-light);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#taskList li.completed .task-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-text {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions .edit-btn,
+.task-actions .delete-btn {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+}
+
+/* Input Section */
+.task-input-container .form-control {
+    border: none;
+    background-color: var(--task-bg-light);
+    color: var(--text-color-light);
+    border-radius: 10px;
+}
+.task-input-container .btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
